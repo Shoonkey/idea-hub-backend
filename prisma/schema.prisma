@@ -1,8 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider     = "prisma-client"
   output       = "../generated/prisma"
@@ -21,7 +19,7 @@ model User {
   id          String       @id @default(cuid())
   email       String       @unique
   username    String       @unique
-  posts       Post[]
+  ideas       Idea[]
   loginTokens LoginToken[]
 }
 
@@ -33,10 +31,11 @@ model LoginToken {
   userId         String
 }
 
-model Post {
+model Idea {
   id        String   @id @default(cuid())
   title     String
   content   String?
+  supports  Int      @default(0)
   createdAt DateTime @default(now())
   author    User?    @relation(fields: [authorId], references: [id])
   authorId  String?

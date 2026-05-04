@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Idea" ADD COLUMN     "supports" INTEGER NOT NULL DEFAULT 0;
