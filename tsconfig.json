@@ -25,7 +25,7 @@
       "jest"
     ],
     "paths": {
-      "@/models*": ["./generated/prisma/client"]
+      "@/models": ["./generated/prisma/client"]
     }
   }
 }
